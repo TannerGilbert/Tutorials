@@ -1,0 +1,126 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+from keras.layers import Input, Dense, Conv2D, MaxPooling2D, UpSampling2D, LSTM
+from keras.models import Model
+from keras.datasets import mnist 
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+del y_train
+del y_test
+
+# scale data between 0 and 1
+x_train = x_train.astype('float32') / 256
+x_test = x_test.astype('float32') / 256
+
+# Reshape data
+x_train = x_train.reshape(len(x_train), 28*28)
+x_test = x_test.reshape(len(x_test), 28*28)
+
+print('Training data shape:', x_train.shape)
+print('Testing data shape:', x_test.shape) Copy
+input_layer = Input(shape=(784,))
+# encoded layer. compresses data by the factor 12.25 (784/64=12.25)
+encoded = Dense(64, activation='relu')(input_layer)
+# decoded layer. reconstructs the input (units are equal to the input dimension of the image)
+decoded = Dense(784, activation='sigmoid')(encoded) 
+# this model maps an input to its reconstruction
+autoencoder = Model(input_layer, decoded) Copy
+# this model maps an input to its encoded representation
+encoder = Model(input_layer, encoded) 
+# for the decoder we need to create an input layer which has the dimensionality of the encoded layer
+input_layer_dec = Input(shape=(64,))
+# retrieve the last layer of the autoencoder model and place it after the input layer
+decoder_layer = autoencoder.layers[-1](input_layer_dec)
+
+decoder = Model(input_layer_dec, decoder_layer) Copy
+autoencoder.compile(optimizer='adadelta', loss='binary_crossentropy')
+
+autoencoder.fit(x_train, x_train, epochs=50, batch_size=256,
+                shuffle=True,validation_data=(x_test, x_test)) 
+encoded_images = encoder.predict(x_test)
+decoded_images = decoder.predict(encoded_images) # takes the output from the encoder as input Copy
+def visualize_data(data, size):
+    n = 10 # number of digits that will be displayed
+    plt.figure(figsize=(20, 4))
+    plt.gray()
+    for i in range(n):
+        ax = plt.subplot(2, n, i+1)
+        plt.imshow(data[i].reshape(size, size)) # reshape the image back to its normal shape
+        # disable axis
+        ax.get_xaxis().set_visible(False)
+        ax.get_yaxis().set_visible(False)
+    plt.show()     
+visualize_data(x_test, 28)
+visualize_data(decoded_images, 28) Copy
+visualize_data(encoded_images, 8) 
+input_layer = Input(shape=(784,))
+ encoded = Dense(128, activation='relu')(input_layer)
+encoded = Dense(64, activation='relu')(encoded)
+
+decoded = Dense(128, activation='relu')(encoded)
+decoded = Dense(784, activation='sigmoid')(decoded) Copy
+autoencoder = Model(input_layer, decoded)
+autoencoder.compile(optimizer='adadelta', loss='binary_crossentropy')
+
+autoencoder.fit(x_train, x_train, epochs=100, batch_size=256,
+                shuffle=True,validation_data=(x_test, x_test)) 
+autoencoded_images = autoencoder.predict(x_test) Copy
+visualize_data(x_test, 28)
+visualize_data(autoencoded_images, 28) 
+# Reshape data for Convolutional Layer
+x_train = x_train.reshape(len(x_train), 28, 28, 1)
+x_test = x_test.reshape(len(x_test), 28, 28, 1)
+print('Training data shape:', x_train.shape)
+print('Testing data shape:', x_test.shape) Copy
+input_layer = Input(shape=(28, 28, 1))
+
+x = Conv2D(16, (3, 3), activation='relu', padding='same')(input_layer)
+x = MaxPooling2D((2, 2), padding='same')(x)
+x = Conv2D(8, (3, 3), activation='relu', padding='same')(x)
+x = MaxPooling2D((2, 2), padding='same')(x)
+x = Conv2D(8, (3, 3), activation='relu', padding='same')(x)
+encoded = MaxPooling2D((2,2), padding='same')(x)
+
+# encoded representation is (4, 4, 8) i.e. 128-dimensional
+
+x = Conv2D(8, (3, 3), activation='relu', padding='same')(encoded)
+x = UpSampling2D((2, 2))(x)
+x = Conv2D(8, (3, 3), activation='relu', padding='same')(x)
+x = UpSampling2D((2, 2))(x)
+x = Conv2D(16, (3, 3), activation='relu')(x)
+x = UpSampling2D((2, 2))(x)
+decoded = Conv2D(1, (3, 3), activation='sigmoid', padding='same')(x) 
+autoencoder = Model(input_layer, decoded)
+autoencoder.compile(loss='binary_crossentropy', optimizer='adadelta') Copy
+autoencoder.fit(x_train, x_train, epochs=50,
+                batch_size=128, shuffle=True,validation_data=(x_test, x_test)) 
+autoencoded_images = autoencoder.predict(x_test)Copy
+visualize_data(x_test, 28)
+visualize_data(autoencoded_images, 28) 
+noise_factor = 0.5
+x_train_noisy = x_train + noise_factor * np.random.normal(loc=0.0, scale=1.0, size=x_train.shape) 
+x_test_noisy = x_test + noise_factor * np.random.normal(loc=0.0, scale=1.0, size=x_test.shape)
+
+x_train_noisy = np.clip(x_train_noisy, 0., 1.)
+x_test_noisy = np.clip(x_test_noisy, 0., 1.) Copy
+visualize_data(x_test_noisy, 28)
+input_layer = Input(shape=(28, 28, 1))
+x = Conv2D(32, (3, 3), activation='relu', padding='same')(input_layer)
+x = MaxPooling2D((2, 2), padding='same')(x)
+x = Conv2D(32, (3, 3), activation='relu', padding='same')(x)
+encoded = MaxPooling2D((2, 2), padding='same')(x)
+
+# at this point the representation is (7, 7, 32)
+
+x = Conv2D(32, (3, 3), activation='relu', padding='same')(encoded)
+x = UpSampling2D((2, 2))(x)
+x = Conv2D(32, (3, 3), activation='relu', padding='same')(x)
+x = UpSampling2D((2, 2))(x)
+decoded = Conv2D(1, (3, 3), activation='sigmoid', padding='same')(x) Copy
+autoencoder = Model(input_layer, decoded)
+autoencoder.compile(optimizer='adadelta', loss='binary_crossentropy') 
+autoencoder.fit(x_train_noisy, x_train, epochs=100,batch_size=128,
+                shuffle=True,validation_data=(x_test_noisy, x_test))Copy
+denoised_data = autoencoder.predict(x_train_noisy)
+visualize_data(x_train_noisy, 28)
+visualize_data(denoised_data, 28) 
