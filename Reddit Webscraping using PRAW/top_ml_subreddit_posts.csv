@@ -1,0 +1,72 @@
+,title,score,id,subreddit,url,num_comments,body,created
+0,[D] What is the best ML paper you read in 2018 and why?,421,a6cbzm,MachineLearning,https://www.reddit.com/r/MachineLearning/comments/a6cbzm/d_what_is_the_best_ml_paper_you_read_in_2018_and/,54,"Enjoyed this thread last year, so I am making a one for this year. ",1544877298.0
+1,[D] Machine Learning - WAYR (What Are You Reading) - Week 53,25,a8yaro,MachineLearning,https://www.reddit.com/r/MachineLearning/comments/a8yaro/d_machine_learning_wayr_what_are_you_reading_week/,8,"This is a place to share machine learning research papers, journals, and articles that you're reading this week. If it relates to what you're researching, by all means elaborate and give us your insight, otherwise it could just be an interesting paper you've read.
+
+Please try to provide some insight from your understanding and please don't post things which are present in wiki.
+
+Preferably you should link the arxiv page (not the PDF, you can easily access the PDF from the summary page but not the other way around) or any other pertinent links.
+
+Previous weeks :
+
+|1-10|11-20|21-30|31-40|41-50|51-60|
+|----|-----|-----|-----|-----|-----|
+|[Week 1](https://www.reddit.com/4qyjiq)|[Week 11](https://www.reddit.com/57xw56)|[Week 21](https://www.reddit.com/60ildf)|[Week 31](https://www.reddit.com/6s0k1u)|[Week 41](https://www.reddit.com/7tn2ax)|[Week 51](https://reddit.com/9s9el5)||||
+|[Week 2](https://www.reddit.com/4s2xqm)|[Week 12](https://www.reddit.com/5acb1t)|[Week 22](https://www.reddit.com/64jwde)|[Week 32](https://www.reddit.com/72ab5y)|[Week 42](https://www.reddit.com/7wvjfk)|[Week 52](https://reddit.com/a4opot)||
+|[Week 3](https://www.reddit.com/4t7mqm)|[Week 13](https://www.reddit.com/5cwfb6)|[Week 23](https://www.reddit.com/674331)|[Week 33](https://www.reddit.com/75405d)|[Week 43](https://www.reddit.com/807ex4)||
+|[Week 4](https://www.reddit.com/4ub2kw)|[Week 14](https://www.reddit.com/5fc5mh)|[Week 24](https://www.reddit.com/68hhhb)|[Week 34](https://www.reddit.com/782js9)|[Week 44](https://reddit.com/8aluhs)||
+|[Week 5](https://www.reddit.com/4xomf7)|[Week 15](https://www.reddit.com/5hy4ur)|[Week 25](https://www.reddit.com/69teiz)|[Week 35](https://www.reddit.com/7b0av0)|[Week 45](https://reddit.com/8tnnez)||
+|[Week 6](https://www.reddit.com/4zcyvk)|[Week 16](https://www.reddit.com/5kd6vd)|[Week 26](https://www.reddit.com/6d7nb1)|[Week 36](https://www.reddit.com/7e3fx6)|[Week 46](https://reddit.com/8x48oj)||
+|[Week 7](https://www.reddit.com/52t6mo)|[Week 17](https://www.reddit.com/5ob7dx)|[Week 27](https://www.reddit.com/6gngwc)|[Week 37](https://www.reddit.com/7hcc2c)|[Week 47](https://reddit.com/910jmh)||
+|[Week 8](https://www.reddit.com/53heol)|[Week 18](https://www.reddit.com/5r14yd)|[Week 28](https://www.reddit.com/6jgdva)|[Week 38](https://www.reddit.com/7kgcqr)|[Week 48](https://reddit.com/94up0g)||
+|[Week 9](https://www.reddit.com/54kvsu)|[Week 19](https://www.reddit.com/5tt9cz)|[Week 29](https://www.reddit.com/6m9l1v)|[Week 39](https://www.reddit.com/7nayri)|[Week 49](https://reddit.com/98n2rt)||
+|[Week 10](https://www.reddit.com/56s2oa)|[Week 20](https://www.reddit.com/5wh2wb)|[Week 30](https://www.reddit.com/6p3ha7)|[Week 40](https://www.reddit.com/7qel9p)|[Week 50](https://reddit.com/9cf158)||
+
+Most upvoted papers two weeks ago:
+
+/u/blackbearx3: [Variational Learning of Inducing Variables in Sparse Gaussian Processes](http://proceedings.mlr.press/v5/titsias09a.html)
+
+/u/wassname: [Non-Delusional Q-Learning and Value-Iteration](https://papers.nips.cc/paper/8200-non-delusional-q-learning-and-value-iteration.pdf)
+
+Besides that, there are no rules, have fun.",1545627606.0
+2,[R] A Geometric Theory of Higher-Order Automatic Differentiation,49,abesyt,MachineLearning,https://arxiv.org/abs/1812.11592,3,,1546344694.0
+3,"UC Berkeley and Berkeley AI Research published all materials of CS 188: Introduction to Artificial Intelligence, Fall 2018",867,ab4207,MachineLearning,https://inst.eecs.berkeley.edu/~cs188/fa18/,62,,1546262222.0
+4,"[Research] Accurate, Data-Efficient, Unconstrained Text Recognition with Convolutional Neural Networks",10,aber0d,MachineLearning,https://arxiv.org/abs/1812.11894,1,,1546344203.0
+5,"[Project] New Tsetlin Machine implementation with 3.5x faster learning, 8x faster pattern recognition, using 10x less memory, including MNIST demo",30,ab8na3,MachineLearning,https://www.reddit.com/r/MachineLearning/comments/ab8na3/project_new_tsetlin_machine_implementation_with/,0,"Finished today. First run through shows approx. 98.2% accuracy on MNIST. Hopefully, accuracy will be improved with a more elaborate hyperparameter search. Is anyone up for the challenge?
+
+[https://github.com/cair/fast-tsetlin-machine-with-mnist-demo](https://github.com/cair/fast-tsetlin-machine-with-mnist-demo)
+
+The best result will, of course, be acknowledged in the forthcoming paper.
+
+When I first released the Tsetlin Machine this spring I was very impressed by the feedback and how quickly and accurately the Reddit community was able to provide several implementations. Any feedback, also on further optimization of the code, will be highly appreciated and acknowledged.",1546302795.0
+6,[D] My agent found some sort of exploit in the Atari 2600 Pong game?,14,ab9llv,MachineLearning,https://www.reddit.com/r/MachineLearning/comments/ab9llv/d_my_agent_found_some_sort_of_exploit_in_the/,7,"Hello,
+
+Here is a video of my AI playing a peculiar game of Atari Pong: [https://www.youtube.com/watch?v=naSpIBWqOjk](https://www.youtube.com/watch?v=naSpIBWqOjk)
+
+I started filming partly through a round. Basically, it gets perfect scores by just sitting in a particular position. This occurred on the 5th episode of training.
+
+I thought this would be interesting enough to share with the community here. It seems that my agent found some sort of exploit in the game. This is using the standard OpenAI gym environment Pong-v0. The agent has found a kind of ""god spot"" where it sits and collects perfect scores.
+
+What confuses me is that I cannot seem to find anyone else who found this exploit. Is it a bug on my end or the OpenAI gym? Is it known in some Atari community somewhere? Does this weaken results obtained in this environment somehow (DQN didn't find this position somehow AFAIK, as it doesn't have a perfect score)?
+
+My current theory is that due to the strange way my agent handles exploration (not just random noise), it is capable of standing completely still, allowing it to exploit this position. Algorithms such as DQN add exploratory noise that breaks the agent out of this position.
+
+Edit: Formatting
+
+Edit2: During formatting I posted the wrong video (one I used for comparison)!",1546308701.0
+7,[discussion] Object detection in video - using temporal information?,3,abayg9,MachineLearning,https://www.reddit.com/r/MachineLearning/comments/abayg9/discussion_object_detection_in_video_using/,5,"When applying object detection to video, I often see people processing each frame independently using a single-image object detector. Since a lot of these detectors run in real-time, this seems to work OK.
+
+However, in some situations, the motion information across frames is extremely important in detecting an object. For example: a stalking lion, a camouflaged owl, or a person playing paintball. And we know that ""motion perception is one of the most important capabilities of the visual system."" [\[1\]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3274219/)
+
+I'm wondering what techniques people would consider for this problem and what datasets would be most useful. Some of the general techniques that came to my mind were:
+
+* 3D convolutions (2D image + time)
+* 2D convolution combined with RNN (or LSTM/GRU)
+* 2D convolution on optical flow data.",1546317194.0
+8,[P] TMTrackNN — generating TrackMania tracks with neural networks,58,ab2kd3,MachineLearning,https://www.reddit.com/r/MachineLearning/comments/ab2kd3/p_tmtracknn_generating_trackmania_tracks_with/,14,"Hello!  First time posting here, I wanted to share my first ML project  involving LSTM's on an absolutely non-serious task of generating tracks  for a racing game called TrackMania (yes, it is quite weird).
+
+I  would say, don't expect anything great or SOTA results for a 18yr old  guy that just started experimenting with ML, but I hope you'll find this  at least somewhat interesting...
+
+Medium post: [https://medium.com/@donadigo/tmtracknn-generating-trackmania-tracks-with-neural-networks-146db058e7cb](https://medium.com/@donadigo/tmtracknn-generating-trackmania-tracks-with-neural-networks-146db058e7cb)
+
+GitHub: [https://github.com/donadigo/tmtracknn](https://github.com/donadigo/tmtracknn)",1546251064.0
+9,[R] Sim2Real – Using Simulation to Train Real-Life Grasping Robots,76,ab0hiv,MachineLearning,https://www.reddit.com/r/MachineLearning/comments/ab0hiv/r_sim2real_using_simulation_to_train_reallife/,3,"Hey, I published a summary of RCAN, a new robotics paper from X/Google/Deepmind which achieves state-of-the-art results in robotic grasping with very little training data. The main idea is that instead of training the grasping robot on full-resolution images of object grasping you train it on a simplified version (canonical style) of the grasps. Personally, I think it's one of the most interesting papers of 2018 and it's also cool that it combines GANs, Reinforcement Learning, and Computer Vision. Full summary here: https://www.lyrn.ai/2018/12/30/sim2real-using-simulation-to-train-real-life-grasping-robots/",1546237056.0
