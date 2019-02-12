@@ -1,6 +1,6 @@
-# Article
+# Tutorials
 
-Repository that contains the code for my articles.
+This repository contains the code for all my articles and video series.
 
 ## Getting Started
 
