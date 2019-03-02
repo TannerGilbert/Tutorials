@@ -1,0 +1,12 @@
+input_features:
+    -
+        name: content
+        type: text
+
+output_features:
+    -
+        name: airline_sentiment
+        type: category
+
+training:
+    epochs: 5
