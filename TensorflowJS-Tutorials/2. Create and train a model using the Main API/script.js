@@ -6,13 +6,16 @@ const y = x.mul(0.5).add(tf.randomUniform([100], -0.1, 0.1))
 m = tf.variable(tf.scalar(Math.random()*2-1))
 b = tf.variable(tf.scalar(Math.random()*2-1))
 
+// Specifying a learning rate and an optimizer
 const learningRate = 0.1;
 const optimizer = tf.train.sgd(learningRate)
 
+// Training model for 50 epochs
 for(let i = 0; i < 50; i++) {
     optimizer.minimize(() => loss(predict(x), y))
 }
 
+// Printing our weights (slope, intercept)
 m.print()
 b.print()
 
