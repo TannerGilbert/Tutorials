@@ -1,0 +1,16 @@
+input_features:
+    -
+        name: content
+        type: text
+        encoder: rnn
+        cell_type: lstm
+        bidirectional: true
+        level: word
+
+output_features:
+    -
+        name: airline_sentiment
+        type: category
+
+training:
+    epochs: 5
