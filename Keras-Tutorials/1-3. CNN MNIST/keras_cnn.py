@@ -11,6 +11,7 @@ from keras.callbacks import ReduceLROnPlateau
 import os
 
 def getData():
+    """Loading in the MNIST dataset"""
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
     img_rows, img_cols = 28, 28
 
@@ -25,11 +26,13 @@ def getData():
     return X_train, y_train, X_test, y_test
 
 def trainModel(X_train, y_train, X_test, y_test):
+    """Creating and training a convolutional neural network"""
     batch_size = 64
     epochs = 15
 
-    model = Sequential()
-
+    model = Sequential() # create sequential model
+    
+    # create some conv, maxpoll, dropout blocks
     model.add(Conv2D(filters=32, kernel_size=(5,5), activation='relu', input_shape=(28,28,1)))
     model.add(Conv2D(filters=32, kernel_size=(5,5), activation='relu'))
     model.add(MaxPool2D(pool_size=(2, 2)))
@@ -44,23 +47,27 @@ def trainModel(X_train, y_train, X_test, y_test):
     model.add(Dense(256, activation='relu'))
     model.add(Dropout(rate=0.5))
     model.add(Dense(10, activation='softmax'))
-
-    optimizer = RMSprop(lr=0.001)
+    
+    # specify a optimizer
+    optimizer = RMSprop(lr=0.001) 
+    
+    # create a callback function
     learning_rate_reduction = ReduceLROnPlateau(monitor='val_acc', patience=3, verbose=1, factor=0.5, min_lr=0.00001)
-
+    
+    # create a datagenerator for augmenting images
     datagen = ImageDataGenerator(
             rotation_range=10,
             zoom_range=0.1,
             width_shift_range=0.1,
             height_shift_range=0.1)
-
+    
+    # compiling and training the model
     model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
-
     history = model.fit_generator(datagen.flow(X_train, y_train, batch_size=batch_size), epochs=epochs,
                                   validation_data=(X_test, y_test), verbose=2,
 				                  steps_per_epoch=X_train.shape[0]//batch_size,
 				                  callbacks=[learning_rate_reduction])
-
+    # saving the model
     model_json = model.to_json()
     with open('model.json', 'w') as json_file:
         json_file.write(model_json)
@@ -68,6 +75,7 @@ def trainModel(X_train, y_train, X_test, y_test):
     return model
 
 def loadModel():
+    """Load saved model"""
     json_file = open('model.json', 'r')
     model_json = json_file.read()
     json_file.close()
@@ -75,13 +83,14 @@ def loadModel():
     model.load_weights("mnist_model.h5")
     return model
 
-X_train, y_train, X_test, y_test = getData()
+if __name__ == '__main__':
+    X_train, y_train, X_test, y_test = getData()
 
-if(not os.path.exists('mnist_model.h5')):
-    model = trainModel(X_train, y_train, X_test, y_test)
-    print('trained model')
-    print(model.summary())
-else:
-    model = loadModel()
-    print('loaded model')
-    print(model.summary())
+    if(not os.path.exists('mnist_model.h5')):
+        model = trainModel(X_train, y_train, X_test, y_test)
+        print('trained model')
+        print(model.summary())
+    else:
+        model = loadModel()
+        print('loaded model')
+        print(model.summary())

@@ -1,4 +1,6 @@
-# Keras Tutorials
+# Keras Tutorials  
+
+![](https://s3.amazonaws.com/keras.io/img/keras-logo-2018-large-1200.png)  
 
 Learn how to use Keras for multiple different Machine Learning problems.
 
@@ -13,7 +15,3 @@ As well as either [Tensorflow](https://www.tensorflow.org/install/) or [Theano](
 
 ## Author
  **Gilbert Tanner**
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details

@@ -5,6 +5,7 @@ let y_test;
 let model;
 let history;
 
+// Getting the Iris data-set using JQuery and Ajax
 function get_data() {
     $.ajax({
         dataType: "json",
@@ -33,6 +34,7 @@ function get_data() {
     })
 }
 
+// Creating and training our model
 function run() {
     $.when(get_data()).then(() => {
         x_train.print()

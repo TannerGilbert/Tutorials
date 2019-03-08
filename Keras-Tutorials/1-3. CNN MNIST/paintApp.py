@@ -46,9 +46,11 @@ class Paint(object):
         self.old_y = event.y
 
     def clear(self):
+        """Clear drawing area"""
         self.c.delete("all")
 
     def reset(self, event):
+        """reset old_x and old_y if the left mouse button is released"""
         self.old_x, self.old_y = None, None
 
     def classify(self, widget):
