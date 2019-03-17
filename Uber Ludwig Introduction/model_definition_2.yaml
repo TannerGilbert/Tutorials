@@ -1,6 +1,6 @@
 input_features:
     -
-        name: content
+        name: text
         type: text
         encoder: rnn
         cell_type: lstm

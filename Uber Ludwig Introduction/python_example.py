@@ -1,12 +1,12 @@
 from ludwig import LudwigModel
 import pandas as pd
 
-df = pd.read_csv('Tweets.csv')[['airline_sentiment', 'content']]
+df = pd.read_csv('Tweets.csv')
 print(df.head())
 
 model_definition = {
     'input_features':[
-        {'name':'content', 'type':'text'},
+        {'name':'text', 'type':'text'},
     ],
     'output_features': [
         {'name': 'airline_sentiment', 'type': 'category'}
