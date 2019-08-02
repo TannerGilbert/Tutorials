@@ -1,0 +1,42 @@
+input_features:
+  -
+    name: age
+    type: numerical
+  -
+    name: sex
+    type: category
+  -
+    name: cp
+    type: category
+  -
+    name: trestbps
+    type: category
+  -
+    name: chol
+    type: numerical
+  -
+    name: fbs
+    type: category
+  -
+    name: thalach
+    type: numerical
+  -
+    name: exang
+    type: category
+  -
+    name: oldpeak
+    type: category
+  -
+    name: slope
+    type: category
+  -
+    name: ca
+    type: category
+  -
+    name: thal
+    type: category
+
+output_features:
+  -
+    name: target
+    type: binary

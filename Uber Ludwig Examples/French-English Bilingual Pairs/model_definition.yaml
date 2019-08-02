@@ -1,0 +1,26 @@
+input_features:
+  -
+    name: english
+    type: text
+    level: word
+    encoder: rnn
+    cell_type: lstm
+    reduce_output: null
+    preprocessing:
+      word_format: english_tokenize
+
+output_features:
+  -
+    name: french
+    type: text
+    level: word
+    decoder: generator
+    cell_type: lstm
+    attention: bahdanau
+    loss:
+      type: sampled_softmax_cross_entropy
+    preprocessing:
+      word_format: space
+
+training:
+  batch_size: 32

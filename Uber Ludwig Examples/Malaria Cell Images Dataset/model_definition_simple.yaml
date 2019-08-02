@@ -1,0 +1,16 @@
+input_features:
+    -
+        name: image_name
+        type: image
+        encoder: stacked_cnn
+        resize_method: crop_or_pad
+        width: 128
+        height: 128
+
+output_features:
+    -
+        name: label
+        type: category
+
+training:
+    batch_size: 8

@@ -1,0 +1,14 @@
+input_features:
+  -
+    name: image_name
+    type: image
+    encoder: stacked_cnn
+    in_memory: False
+
+output_features:
+  -
+    name: tags
+    type: set
+
+training:
+    batch_size: 4

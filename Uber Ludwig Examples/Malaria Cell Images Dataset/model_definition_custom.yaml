@@ -1,0 +1,42 @@
+input_features:
+    -
+        name: image_path
+        type: image
+        encoder: stacked_cnn
+        resize_method: crop_or_pad
+        width: 128
+        height: 128
+        conv_layers:
+            -
+                num_filters: 32
+                filter_size: 3
+                pool_size: 2
+                pool_stride: 2
+                dropout: true
+            -
+                num_filters: 32
+                filter_size: 3
+                pool_size: 2
+                pool_stride: 2
+            -
+                num_filters: 64
+                filter_size: 3
+                pool_size: 2
+                pool_stride: 2
+                dropout: true
+        fc_layers:
+            -
+                fc_size: 256
+                dropout: true
+            -
+                fc_size: 128
+                dropout: true
+
+output_features:
+    -
+        name: label
+        type: category
+
+training:
+    dropout_rate: 0.3
+    batch_size: 4
