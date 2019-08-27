@@ -37,3 +37,12 @@ class BlendingModels(BaseEstimator, RegressorMixin, TransformerMixin):
             return self.meta_model_.predict(np.hstack((X, meta_features)))
         else:
             return self.meta_model_.predict(meta_features)
+
+    def predict_proba(self, X):
+        meta_features = np.column_stack([
+            model.predict(X) for model in self.base_models_
+        ])
+        if self.use_features_in_secondary:
+            return self.meta_model_.predict_proba(np.hstack((X, meta_features)))
+        else:
+            return self.meta_model_.predict_proba(meta_features)

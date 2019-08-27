@@ -35,3 +35,14 @@ class BaggingModels(BaseEstimator, RegressorMixin, TransformerMixin):
             return np.array([np.argmax(np.bincount(predictions)) for predictions in predictions_array])
         else:
             return np.mean(predictions_array, axis=1)
+
+    def predict_proba(self, X):
+        if self.task_type == 'classification':
+            predictions = []
+            for x in X:
+                prediction = np.row_stack([
+                    model.predict_proba([x]) for model in self.models_
+                ])
+                predictions.append(np.mean(prediction, axis=0))
+            return np.array(predictions)
+        return None

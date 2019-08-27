@@ -55,11 +55,7 @@ class StackingModels(BaseEstimator, RegressorMixin, TransformerMixin):
             meta_features = np.column_stack([[np.argmax(np.bincount(predictions)) for predictions in
                                               np.column_stack([model.predict(X) for model in base_models])]
                                              for base_models in self.base_models_])
-        else:
-            meta_features = np.column_stack([
-                np.column_stack([model.predict(X) for model in base_models]).mean(axis=1)
-                for base_models in self.base_models_])
-        if self.use_features_in_secondary:
-            return self.meta_model_.predict_proba(np.hstack((X, meta_features)))
-        else:
-            return self.meta_model_.predict_proba(meta_features)
+            if self.use_features_in_secondary:
+                return self.meta_model_.predict_proba(np.hstack((X, meta_features)))
+            else:
+                return self.meta_model_.predict_proba(meta_features)
