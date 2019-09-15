@@ -1,0 +1,11 @@
+C:\Users\Gilbert\Desktop\Programming\Learning\trying-stuff-out\ML.Net Examples\CreditCardFraudDetection\CreditCardFraudDetection\bin\Debug\netcoreapp2.2\CreditCardFraudDetection.deps.json
+C:\Users\Gilbert\Desktop\Programming\Learning\trying-stuff-out\ML.Net Examples\CreditCardFraudDetection\CreditCardFraudDetection\bin\Debug\netcoreapp2.2\CreditCardFraudDetection.runtimeconfig.json
+C:\Users\Gilbert\Desktop\Programming\Learning\trying-stuff-out\ML.Net Examples\CreditCardFraudDetection\CreditCardFraudDetection\bin\Debug\netcoreapp2.2\CreditCardFraudDetection.runtimeconfig.dev.json
+C:\Users\Gilbert\Desktop\Programming\Learning\trying-stuff-out\ML.Net Examples\CreditCardFraudDetection\CreditCardFraudDetection\bin\Debug\netcoreapp2.2\CreditCardFraudDetection.dll
+C:\Users\Gilbert\Desktop\Programming\Learning\trying-stuff-out\ML.Net Examples\CreditCardFraudDetection\CreditCardFraudDetection\obj\Debug\netcoreapp2.2\CreditCardFraudDetection.csprojAssemblyReference.cache
+C:\Users\Gilbert\Desktop\Programming\Learning\trying-stuff-out\ML.Net Examples\CreditCardFraudDetection\CreditCardFraudDetection\obj\Debug\netcoreapp2.2\CreditCardFraudDetection.csproj.CoreCompileInputs.cache
+C:\Users\Gilbert\Desktop\Programming\Learning\trying-stuff-out\ML.Net Examples\CreditCardFraudDetection\CreditCardFraudDetection\obj\Debug\netcoreapp2.2\CreditCardFraudDetection.AssemblyInfoInputs.cache
+C:\Users\Gilbert\Desktop\Programming\Learning\trying-stuff-out\ML.Net Examples\CreditCardFraudDetection\CreditCardFraudDetection\obj\Debug\netcoreapp2.2\CreditCardFraudDetection.AssemblyInfo.cs
+C:\Users\Gilbert\Desktop\Programming\Learning\trying-stuff-out\ML.Net Examples\CreditCardFraudDetection\CreditCardFraudDetection\bin\Debug\netcoreapp2.2\CreditCardFraudDetection.pdb
+C:\Users\Gilbert\Desktop\Programming\Learning\trying-stuff-out\ML.Net Examples\CreditCardFraudDetection\CreditCardFraudDetection\obj\Debug\netcoreapp2.2\CreditCardFraudDetection.dll
+C:\Users\Gilbert\Desktop\Programming\Learning\trying-stuff-out\ML.Net Examples\CreditCardFraudDetection\CreditCardFraudDetection\obj\Debug\netcoreapp2.2\CreditCardFraudDetection.pdb
