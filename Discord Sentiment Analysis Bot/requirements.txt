@@ -1,0 +1,4 @@
+discord.py==1.2.3
+googletrans==2.4.0
+discord==1.0.1
+vaderSentiment==3.2.1
