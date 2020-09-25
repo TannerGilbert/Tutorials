@@ -1,4 +1,4 @@
-tensorflow_gpu==1.15.2
+tensorflow_gpu==1.15.4
 opencv_python==4.1.0.25
 numpy==1.16.4
 pandas==0.25.1
