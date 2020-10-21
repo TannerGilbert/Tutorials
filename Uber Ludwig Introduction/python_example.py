@@ -1,4 +1,4 @@
-from ludwig import LudwigModel
+from ludwig.api import LudwigModel
 import pandas as pd
 
 df = pd.read_csv('Tweets.csv')
@@ -16,5 +16,4 @@ model_definition = {
 print('creating model')
 model = LudwigModel(model_definition)
 print('training model')
-train_stats = model.train(data_df=df)
-model.close()
+train_stats, _, _ = model.train(dataset=df)
