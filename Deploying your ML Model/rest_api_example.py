@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify # loading in Flask
-from ludwig import LudwigModel # loading in Ludwig
+from ludwig.api import LudwigModel # loading in Ludwig
 import pandas as pd # loading pandas for reading csv
 
 # creating a Flask application
@@ -17,7 +17,7 @@ def predict():
     df = pd.DataFrame([str(data['text'])], columns=['content'])
     print(df.head())
     # making predictions
-    pred = model.predict(data_df=df)
+    pred = model.predict(dataset=df, data_format='df')
     print(pred)
     # returning the predictions as json
     return jsonify(pred['airline_sentiment_predictions'][0])

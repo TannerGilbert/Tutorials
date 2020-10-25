@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from ludwig import LudwigModel
+from ludwig.api import LudwigModel
 import pandas as pd
 
 app = Flask(__name__, template_folder="templates")
@@ -14,7 +14,7 @@ def home():
         # Make prediction
         df = pd.DataFrame([str(data)], columns=['content'])
         print(df.head())
-        pred = model.predict(data_df=df)
+        pred = model.predict(dataset=df, data_format='df')
         print(pred)
         return render_template('index.html', sentiment=pred['airline_sentiment_predictions'][0])
     return render_template('index.html', sentiment='')
