@@ -1,15 +1,5 @@
 # FastAI Tutorials
-![](https://pbs.twimg.com/profile_images/799410161387323392/al3Obw0h_400x400.jpg)
 
-Learn how to use the FastAI library for solving machine learning problems
-
-## Getting Started
-
-Clone the wanted part of the repository and run jupyter notebook
-
-### Prerequisites
-
-Install FastAI and PyTorch according to [the official documentation](https://docs.fast.ai/install.html).
-
-## Author
- **Gilbert Tanner**
+**Outdated**: You can find updated code in my FastAI-Code-Collection repository:
+* [FastAI V2](https://github.com/TannerGilbert/FastAI-Code-Collection)
+* [FastAI V1](https://github.com/TannerGilbert/FastAI-Code-Collection/tree/v1)
