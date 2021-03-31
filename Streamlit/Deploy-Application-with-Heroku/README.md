@@ -21,12 +21,12 @@ pipreqs <directory-path>
 The requirements file should look something like the following:
 
 ```bash
-numpy==1.16.4
-streamlit==0.52.1
-seaborn==0.9.0
-pandas==0.25.1
-matplotlib==3.1.1
-scikit_learn==0.22
+streamlit==0.79.0
+pandas==1.2.3
+numpy==1.18.5
+matplotlib==3.3.2
+seaborn==0.11.0
+scikit_learn==0.24.1
 ```
 
 ### 1.2 setup.sh and Procfile

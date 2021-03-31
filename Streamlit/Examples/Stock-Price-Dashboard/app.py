@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import plotly.plotly as py
+import chart_studio.plotly as py
 import plotly.graph_objs as go
 
 st.title('Stock Price of Apple')
@@ -22,7 +22,7 @@ columns.extend(['date'])
 start_date = st.date_input('Start date', value=df['date'].min())
 end_date = st.date_input('End date', value=df['date'].max())
 
-data = df[columns][(df['date']>=start_date) & (df['date']<=end_date)]
+data = df[columns][(df['date']>=pd.to_datetime(start_date)) & (df['date']<=pd.to_datetime(end_date))]
 
 st.write(data)
 
@@ -33,7 +33,7 @@ if st.checkbox('Show summaries'):
     st.subheader('Summaries:')
     st.write(data.describe())
 
-    week_df = data.groupby(data['date'].dt.weekday_name).mean()
+    week_df = data.groupby(data['date'].dt.day_name()).mean()
     
     traces = [go.Bar(
         x = week_df.index,

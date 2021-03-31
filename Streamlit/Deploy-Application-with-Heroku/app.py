@@ -28,10 +28,10 @@ def main():
         st.text('Correlations:')
         fig, ax = plt.subplots(figsize=(10,10))
         sns.heatmap(df.corr(), annot=True, ax=ax)
-        st.pyplot()
+        st.pyplot(fig)
         st.text('Effect of the different classes')
-        sns.pairplot(df, vars=['magnesium', 'flavanoids', 'nonflavanoid_phenols', 'proline'], hue='alcohol')
-        st.pyplot()
+        fig = sns.pairplot(df, vars=['magnesium', 'flavanoids', 'nonflavanoid_phenols', 'proline'], hue='alcohol')
+        st.pyplot(fig)
     else:
         st.title('Modelling')
         model, accuracy = train_model(df)
@@ -43,7 +43,7 @@ def main():
         st.text(model.predict(df.drop(['alcohol'], axis=1).loc[row_number].values.reshape(1, -1))[0])
 
 
-@st.cache
+@st.cache(allow_output_mutation=True)
 def train_model(df):
     X = np.array(df.drop(['alcohol'], axis=1))
     y= np.array(df['alcohol'])
