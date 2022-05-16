@@ -1,6 +1,6 @@
 tensorflow_gpu==1.15.4
 opencv_python==4.2.0.32
-numpy==1.16.4
+numpy==1.21.0
 pandas==0.25.1
 imutils==0.5.2
 Pillow==8.1.1
